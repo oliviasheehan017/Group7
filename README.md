@@ -1,6 +1,7 @@
 MOVIE_WATCHERS
 
-MOVIE_WATCHERS Logo
+![image](https://github.com/EliseoIzazaga/Group7_Documentation_1/assets/13615751/863419a5-f8df-456f-a3c7-c53e99e4e0bc)
+
 
 Welcome to the MOVIE_WATCHERS Project documentation! MOVIE_WATCHERS is a cutting-edge platform that empowers users to discover the perfect movie for their evening entertainment. Whether you're planning a cozy night in or a thrilling movie night with friends, our service provides you with access to a vast collection of movies, streaming services, information, and recommendations to enhance your movie-watching experience.
 Table of Contents
