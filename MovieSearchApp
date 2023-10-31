@@ -1,0 +1,62 @@
+package moviesearchapp;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class MovieSearchApp extends Application {
+
+    private TitleAPI titleAPI;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        titleAPI = new TitleAPI();
+
+        primaryStage.setTitle("Movie Search App");
+
+        TextField titleField = new TextField();
+        titleField.setPromptText("Enter movie title");
+
+        Button searchButton = new Button("Search");
+        searchButton.setOnAction(e -> searchMovie(titleField.getText()));
+
+        TextArea resultArea = new TextArea();
+        resultArea.setEditable(false);
+
+        VBox layout = new VBox(10);
+        layout.setPadding(new Insets(10));
+        layout.getChildren().addAll(titleField, searchButton, resultArea);
+
+        Scene scene = new Scene(layout, 300, 200);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private void searchMovie(String title) {
+        String country = "US";  // You can allow users to select the country as well
+
+        // Call your TitleAPI methods with the user-input title and country
+        String apiResponse = titleAPI.searchTitle(title, country);
+
+        // Display the API response in the TextArea
+        // For simplicity, you can replace the next line with your preferred way of updating the UI
+        System.out.println(apiResponse);
+    }
+
+    public static class TitleAPI {
+        public String searchTitle(String title, String country) {
+            // The logic from your main method to make the API call and get the response goes here
+            // Remember to return the API response as a String
+            return "API response for " + title + " in " + country;
+        }
+    }
+}
